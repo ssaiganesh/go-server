@@ -37,7 +37,7 @@ func helloHandler(w http.ResponseWriter ,r *http.Request){
 func main() {
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
-	http.HandleFunc("/form", formHandler)  // localhost:8080/form.html to submit and it will redirect to /form
+	http.HandleFunc("/form", formHandler)  // localhost:8080/form.html to submit, and it will redirect to /form
 	http.HandleFunc("/hello", helloHandler)
 
 	fmt.Printf("Starting server at port 8080\n")
@@ -49,6 +49,6 @@ func main() {
 
 /*
 go build  -- this built the binary file
-go run main.go -- after running this i was able to run browser and see the server in work when going to the link
+go run main.go -- after running this, I was able to run browser and see the server in work when going to the link
 				  localhost:8080
  */
